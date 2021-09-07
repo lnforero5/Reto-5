@@ -53,6 +53,9 @@ public class ClickController implements ActionListener {
             } catch (NullPointerException ex) {
                 JOptionPane.showMessageDialog(null, "No existe un registro con esos parametros");
                 System.out.println(ex);
+                this.componestesView.getBtnGuardar().setEnabled(true);
+                this.componestesView.getBtnModificar().setEnabled(false);
+                this.componestesView.getBtnEliminar().setEnabled(false);
                 this.componestesView.getTxtId().setText("");
                 this.componestesView.getTxtNombre().setText("");
                 this.componestesView.getTxtApellido().setText("");
@@ -146,7 +149,6 @@ public class ClickController implements ActionListener {
             this.componestesView.getTxtNombre().setText("");
             this.componestesView.getTxtApellido().setText("");
             this.componestesView.getTxtNacionalidad().setText("");
-            JOptionPane.showMessageDialog(null, "Por favor no se equivoque");
         }
 
     }
